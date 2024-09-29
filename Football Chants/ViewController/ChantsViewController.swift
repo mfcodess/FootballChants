@@ -24,6 +24,9 @@ class ChantsViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var teamViewModel = TeamViewModel()
+    private lazy var audioManagerViewModel = AudioManagerViewModel()
+    
     override func loadView() {
         super.loadView()
         setup()
@@ -32,7 +35,7 @@ class ChantsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
     }
 }
 
@@ -42,7 +45,8 @@ private extension ChantsViewController {
         tableVieww.dataSource = self
         self.view.addSubview(tableVieww)
         
-        
+        self.navigationController?.navigationBar.topItem?.title = "Football Chants"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         NSLayoutConstraint.activate([
             tableVieww.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -57,15 +61,25 @@ private extension ChantsViewController {
 extension ChantsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return teamViewModel.teams.count
         
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let team = teamViewModel.teams[indexPath.row]
         let cell = tableVieww.dequeueReusableCell(withIdentifier: TeamTableViewCell.cellId, for: indexPath) as! TeamTableViewCell
-        cell.configure()
+        cell.configure(with: team, delegate: self)
         
         
         return cell
     }
 }
+
+extension ChantsViewController: TeamTableViewCellDelegate {
+    func didTapPlayBack(for team: Team) {
+        audioManagerViewModel.playback(team)
+        teamViewModel.toggleModel(for: team)
+        tableVieww.reloadData()
+    }
+}
+

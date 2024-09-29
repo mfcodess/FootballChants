@@ -16,6 +16,9 @@
 		A6E83A282CA805D5008ACD09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E83A242CA805D5008ACD09 /* LaunchScreen.storyboard */; };
 		A6E83A292CA805D5008ACD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E83A202CA805D5008ACD09 /* AppDelegate.swift */; };
 		A6E83A2B2CA807B7008ACD09 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E83A2A2CA807B7008ACD09 /* Teams.swift */; };
+		A6ED7B402CA96F9F00FD3EA4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ED7B3F2CA96F9F00FD3EA4 /* Assets.swift */; };
+		A6ED7B422CA990BC00FD3EA4 /* AudioManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ED7B412CA990BC00FD3EA4 /* AudioManagerViewModel.swift */; };
+		A6ED7B462CA992CC00FD3EA4 /* arsenal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6ED7B452CA992CC00FD3EA4 /* arsenal.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		A6E83A222CA805D5008ACD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E83A232CA805D5008ACD09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6E83A2A2CA807B7008ACD09 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		A6ED7B3F2CA96F9F00FD3EA4 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		A6ED7B412CA990BC00FD3EA4 /* AudioManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManagerViewModel.swift; sourceTree = "<group>"; };
+		A6ED7B452CA992CC00FD3EA4 /* arsenal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = arsenal.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				A618F38E2CA84A08005DCAC3 /* TeamViewModel.swift */,
+				A6ED7B412CA990BC00FD3EA4 /* AudioManagerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -108,12 +115,22 @@
 		A6E83A252CA805D5008ACD09 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A6ED7B442CA992AB00FD3EA4 /* Chants */,
+				A6ED7B3F2CA96F9F00FD3EA4 /* Assets.swift */,
 				A6E83A202CA805D5008ACD09 /* AppDelegate.swift */,
 				A6E83A212CA805D5008ACD09 /* Assets.xcassets */,
 				A6E83A222CA805D5008ACD09 /* Info.plist */,
 				A6E83A242CA805D5008ACD09 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A6ED7B442CA992AB00FD3EA4 /* Chants */ = {
+			isa = PBXGroup;
+			children = (
+				A6ED7B452CA992CC00FD3EA4 /* arsenal.mp3 */,
+			);
+			path = Chants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6ED7B462CA992CC00FD3EA4 /* arsenal.mp3 in Resources */,
 				A6E83A262CA805D5008ACD09 /* Assets.xcassets in Resources */,
 				A6E83A282CA805D5008ACD09 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -191,7 +209,9 @@
 			files = (
 				A618F3802CA82D1B005DCAC3 /* ChantsViewController.swift in Sources */,
 				A6E83A2B2CA807B7008ACD09 /* Teams.swift in Sources */,
+				A6ED7B402CA96F9F00FD3EA4 /* Assets.swift in Sources */,
 				A6E83A292CA805D5008ACD09 /* AppDelegate.swift in Sources */,
+				A6ED7B422CA990BC00FD3EA4 /* AudioManagerViewModel.swift in Sources */,
 				A618F38C2CA84A05005DCAC3 /* Manager.swift in Sources */,
 				A618F3932CA93A83005DCAC3 /* TeamTableViewCell.swift in Sources */,
 				A618F38D2CA84A05005DCAC3 /* Team.swift in Sources */,

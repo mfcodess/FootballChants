@@ -13,7 +13,6 @@ enum TeamType {
     case astonVilla
     case brighton
     case burnley
-    case chelsea
     case everton
     case fulham
 }
@@ -26,17 +25,15 @@ extension TeamType {
         case .arsenal:
             return UIImage(named: "Arsenal")!
         case .astonVilla:
-            return UIImage(named: "")!
+            return UIImage(named: "AstonVilla")!
         case .brighton:
-            return UIImage(named: "")!
+            return UIImage(named: "Brighton")!
         case .burnley:
-            return UIImage(named: "")!
-        case .chelsea:
-            return UIImage(named: "")!
+            return UIImage(named: "Burnley")!
         case .everton:
-            return UIImage(named: "")!
+            return UIImage(named: "Everton")!
         case .fulham:
-            return UIImage(named: "")!
+            return UIImage(named: "Fulham")!
         }
     }
     
@@ -44,19 +41,17 @@ extension TeamType {
         switch self {
             
         case .arsenal:
-            return .red
+            return UIColor(named: "arsenalColorr")!
         case .astonVilla:
-            return UIColor(named: "")!
+            return UIColor(named: "astonVillaColorr")!
         case .brighton:
-            return UIColor(named: "")!
+            return UIColor(named: "brightonColorr")!
         case .burnley:
-            return UIColor(named: "")!
-        case .chelsea:
-            return UIColor(named: "")!
+            return UIColor(named: "burnleyColorr")!
         case .everton:
-            return UIColor(named: "")!
+            return UIColor(named: "evertonColorr")!
         case .fulham:
-            return UIColor(named: "")!
+            return UIColor(named: "fulhamColorr")!
         }
     }
     
@@ -71,8 +66,6 @@ extension TeamType {
             return "brighton"
         case .burnley:
             return "burnley"
-        case .chelsea:
-            return "chelsea"
         case .everton:
             return "everton"
         case .fulham:

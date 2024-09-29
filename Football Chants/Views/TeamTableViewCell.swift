@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TeamTableViewCellDelegate: AnyObject {
+    func didTapPlayBack(for team: Team)
+}
+
 class TeamTableViewCell: UITableViewCell {
     
     static let cellId = "TeamTableViewCell"
@@ -85,16 +89,39 @@ class TeamTableViewCell: UITableViewCell {
         return label
     }()
     
-    func configure() {
-        conteinerView.backgroundColor = TeamType.arsenal.background
+    private weak var delegate: TeamTableViewCellDelegate?
+    private var team: Team?
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        badgeImageView.image = TeamType.arsenal.badge
-        playbackButton.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32)), for: .normal)
+        conteinerView.layer.cornerRadius = 10
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
         
-        nameLabel.text = "Arsenal"
-        foundedLabel.text = "1888"
-        jobLabel.text = "Current Manager: Mikel Arteta"
-        infoLabel.text = "Arsenal is a football club based in London, England. It was founded in 1888 and is one of the oldest football clubs in the world."
+        self.team = nil
+        self.delegate = nil
+        self.conteinerView.subviews.forEach { $0.removeFromSuperview() }
+    }
+    
+    func configure(with item: Team, delegate: TeamTableViewCellDelegate) {
+        
+        self.team = item
+        self.delegate = delegate
+        
+        playbackButton.addTarget(self, action: #selector(didTapPlayback), for: .touchUpInside)
+        
+        conteinerView.backgroundColor = item.id.background
+        
+        badgeImageView.image = item.id.badge
+        playbackButton.setImage(item.isPlaying ? Assets.pause : Assets.play, for: .normal)
+        
+        nameLabel.text = item.name
+        foundedLabel.text = item.founded
+        jobLabel.text = "Current \(item.manager.job.rawValue): \(item.manager.name)"
+        infoLabel.text = item.info
         
         self.contentView.addSubview(conteinerView)
         
@@ -108,10 +135,10 @@ class TeamTableViewCell: UITableViewCell {
         contentStackView.addArrangedSubview(infoLabel)
         
         NSLayoutConstraint.activate([
-            conteinerView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            conteinerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            conteinerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            conteinerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            conteinerView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8),
+            conteinerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
+            conteinerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8),
+            conteinerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8),
             
             badgeImageView.heightAnchor.constraint(equalToConstant: 50),
             badgeImageView.widthAnchor.constraint(equalToConstant: 50),
@@ -121,7 +148,7 @@ class TeamTableViewCell: UITableViewCell {
             contentStackView.topAnchor.constraint(equalTo: conteinerView.topAnchor, constant: 16),
             contentStackView.bottomAnchor.constraint(equalTo: conteinerView.bottomAnchor, constant: -16),
             contentStackView.leadingAnchor.constraint(equalTo: badgeImageView.trailingAnchor, constant: 8),
-            contentStackView.trailingAnchor.constraint(equalTo: playbackButton.leadingAnchor, constant: 8),
+            contentStackView.trailingAnchor.constraint(equalTo: playbackButton.leadingAnchor, constant: -8),
             
             playbackButton.heightAnchor.constraint(equalToConstant: 44),
             playbackButton.widthAnchor.constraint(equalToConstant: 44),
@@ -130,5 +157,11 @@ class TeamTableViewCell: UITableViewCell {
             
             
         ])
+    }
+    
+    @objc func didTapPlayback() {
+        if let team = team {
+            delegate?.didTapPlayBack(for: team)
+        }
     }
 }
