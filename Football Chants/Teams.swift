@@ -18,17 +18,13 @@ enum TeamType {
     case fulham
 }
 
-//2.    Читаемость: Код стал более понятным — видно, что мы просто получаем значок команды, а не пишем много строк кода.
-//3.    Упрощение изменений: Если нужно будет изменить логику получения значка, мы сделаем это в одном месте, а не везде по коду.
-//Таким образом, используя вычисляемое свойство, мы избегаем повторяющегося кода, что делает наш код более компактным
-
 extension TeamType {
     
     var badge: UIImage {
         switch self {
             
         case .arsenal:
-            return UIImage(named: "")!
+            return UIImage(named: "Arsenal")!
         case .astonVilla:
             return UIImage(named: "")!
         case .brighton:
@@ -48,7 +44,7 @@ extension TeamType {
         switch self {
             
         case .arsenal:
-            return UIColor(named: "")!
+            return .red
         case .astonVilla:
             return UIColor(named: "")!
         case .brighton:

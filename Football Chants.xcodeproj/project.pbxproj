@@ -11,6 +11,7 @@
 		A618F38C2CA84A05005DCAC3 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618F3892CA84A05005DCAC3 /* Manager.swift */; };
 		A618F38D2CA84A05005DCAC3 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618F38A2CA84A05005DCAC3 /* Team.swift */; };
 		A618F3902CA84A08005DCAC3 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618F38E2CA84A08005DCAC3 /* TeamViewModel.swift */; };
+		A618F3932CA93A83005DCAC3 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618F3922CA93A83005DCAC3 /* TeamTableViewCell.swift */; };
 		A6E83A262CA805D5008ACD09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E83A212CA805D5008ACD09 /* Assets.xcassets */; };
 		A6E83A282CA805D5008ACD09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E83A242CA805D5008ACD09 /* LaunchScreen.storyboard */; };
 		A6E83A292CA805D5008ACD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E83A202CA805D5008ACD09 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 		A618F3892CA84A05005DCAC3 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		A618F38A2CA84A05005DCAC3 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		A618F38E2CA84A08005DCAC3 /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
+		A618F3922CA93A83005DCAC3 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		A6E839FA2CA7D787008ACD09 /* Football Chants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Football Chants.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E83A202CA805D5008ACD09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6E83A212CA805D5008ACD09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +46,7 @@
 		A618F37D2CA82CEE005DCAC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A618F37F2CA82D1B005DCAC3 /* ChantsViewController.swift */,
+				A618F3922CA93A83005DCAC3 /* TeamTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -66,6 +68,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		A618F3912CA93A4E005DCAC3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A618F37F2CA82D1B005DCAC3 /* ChantsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		A6E839F12CA7D787008ACD09 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		A6E83A182CA805BF008ACD09 /* Football Chants */ = {
 			isa = PBXGroup;
 			children = (
+				A618F3912CA93A4E005DCAC3 /* ViewController */,
 				A618F38B2CA84A05005DCAC3 /* Models */,
 				A618F37D2CA82CEE005DCAC3 /* Views */,
 				A618F38F2CA84A08005DCAC3 /* ViewModels */,
@@ -182,6 +193,7 @@
 				A6E83A2B2CA807B7008ACD09 /* Teams.swift in Sources */,
 				A6E83A292CA805D5008ACD09 /* AppDelegate.swift in Sources */,
 				A618F38C2CA84A05005DCAC3 /* Manager.swift in Sources */,
+				A618F3932CA93A83005DCAC3 /* TeamTableViewCell.swift in Sources */,
 				A618F38D2CA84A05005DCAC3 /* Team.swift in Sources */,
 				A618F3902CA84A08005DCAC3 /* TeamViewModel.swift in Sources */,
 			);
